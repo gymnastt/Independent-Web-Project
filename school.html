@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Independent Project</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="important.html">Important List</a></li>
+    <li><a href="school.html" aria-current="page">School Homework</a></li>
+    <li><a href="random.html">Random (low priority)</a></li>
+    <li><a href="extra.html">Extra</a></li>
+  </ul>
+</nav>
+
+<div id="myDIV" class="header">
+  <h2 style="margin:5px">My To Do List</h2>
+  <input type="text" id="myInput" placeholder="Title...">
+  <span onclick="newElement()" class="addBtn">Add</span>
+</div>
+
+<ul id="myUL">
+</ul>
+
+<p id="emptyState" class="empty-state" hidden>No tasks yet. Add one above!</p>
+
+
+
+</body>
+</html>

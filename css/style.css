@@ -86,3 +86,16 @@ input {
 .addBtn:hover {
   background-color: #d0637c;
 }
+
+.empty-state {
+  display: block;
+  margin: 20px 0 0;
+  padding: 16px;
+  text-align: center;
+  color: #ad1457;
+  font-size: 1.1rem;
+  font-weight: 700;
+  background: #fde7ec;
+  border-top: 3px solid #fc809f;
+}
+

@@ -1,4 +1,5 @@
 var list = document.getElementById("myUL");
+var emptyState = document.getElementById("emptyState");
 var storageKey = "independentProjectTasks";
 
 function saveTasks() {
@@ -8,12 +9,18 @@ function saveTasks() {
     };
   });
   localStorage.setItem(storageKey, JSON.stringify(tasks));
+  updateEmptyState();
+}
+
+function updateEmptyState() {
+  emptyState.hidden = list.children.length !== 0;
 }
 
 function addTask(text) {
   var li = document.createElement("li");
   li.appendChild(document.createTextNode(text));
   list.appendChild(li);
+  updateEmptyState();
 }
 
 var savedTasks = localStorage.getItem(storageKey);
@@ -22,6 +29,8 @@ if (savedTasks !== null) {
     addTask(task.text);
   });
 }
+
+updateEmptyState();
 
 list.addEventListener('click', function(ev) {
   if (ev.target.tagName === 'LI') {
@@ -32,7 +41,7 @@ list.addEventListener('click', function(ev) {
 
 // Create a new list item when clicking on the "Add" button
 function newElement() {
-  var inputValue = document.getElementById("myInput").value;
+  var inputValue = document.getElementById("myInput").value.trim();
   if (inputValue === '') {
     alert("You must write something!");
   } else {

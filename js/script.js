@@ -1,6 +1,17 @@
 var list = document.getElementById("myUL");
 var emptyState = document.getElementById("emptyState");
-var storageKey = "independentProjectTasks";
+var pageName = window.location.pathname.split("/").pop() || "index.html";
+var storageKey = "independentProjectTasks:" + pageName;
+var legacyStorageKey = "independentProjectTasks";
+
+var legacyTasks = localStorage.getItem(legacyStorageKey);
+if (legacyTasks !== null) {
+  var homeStorageKey = "independentProjectTasks:index.html";
+  if (localStorage.getItem(homeStorageKey) === null) {
+    localStorage.setItem(homeStorageKey, legacyTasks);
+  }
+  localStorage.removeItem(legacyStorageKey);
+}
 
 function saveTasks() {
   var tasks = Array.from(list.children).map(function(li) {

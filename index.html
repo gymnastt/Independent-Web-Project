@@ -6,6 +6,7 @@
     <title>Independent Project</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/nav.css">
+    <script src="js/home.js" defer></script>
 </head>
 <body>
 <nav>
@@ -26,7 +27,51 @@
   </ul>
 </nav>
 
-<main>
+<header class="header home-header">
+  <h1>Welcome to Your Task Manager</h1>
+  <h2>Choose a category from the navigation menu to view and manage your tasks.</h2>
+</header>
+
+<main class="home-main">
+  <section class="home-intro">
+    <h2>Stay organized and keep track of your tasks!</h2>
+    <p>You can add tasks, set their importance, and include notes to keep track of details.</p>
+  </section>
+
+  <section class="home-task-box" aria-labelledby="all-tasks-heading">
+    <h2 id="all-tasks-heading">All Your Tasks</h2>
+    <form id="homeTaskForm" class="task-form home-task-form">
+      <label>Task
+        <input type="text" id="homeTaskTitle" placeholder="What do you need to do?" required>
+      </label>
+      <label>Page
+        <select id="homeTaskPage">
+          <option value="tasks.html">To Do List</option>
+          <option value="important.html">Important List</option>
+          <option value="school.html">School Homework</option>
+          <option value="random.html">Random (low priority)</option>
+          <option value="extra.html">Extra</option>
+        </select>
+      </label>
+      <label>Work time (minutes)
+        <input type="number" id="homeTaskDuration" min="1" step="1" placeholder="e.g. 30">
+      </label>
+      <label>Importance (1-3)
+        <select id="homeTaskImportance">
+          <option value="1">1 - Low</option>
+          <option value="2" selected>2 - Medium</option>
+          <option value="3">3 - High</option>
+        </select>
+      </label>
+      <label>Notes
+        <textarea id="homeTaskNotes" rows="2" placeholder="Add task notes..."></textarea>
+      </label>
+      <button type="submit" class="addBtn">Add Task</button>
+    </form>
+
+    <p id="homeEmptyState" class="empty-state" hidden>No tasks yet. Add one above!</p>
+    <ul id="allTasksList" class="all-tasks-list" aria-live="polite"></ul>
+  </section>
 </main>
 </body>
 </html>

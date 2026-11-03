@@ -28,9 +28,14 @@
   </ul>
 </nav>
 
-<div id="myDIV" class="header">
-  <h1 style="margin:5px; color: rgb(122, 0, 0)">Extra Tasks (not important)</h1>
-  <form id="taskForm" class="task-form">
+<header class="header home-header">
+  <h1>Extra Tasks (not important)</h1>
+</header>
+
+<main class="home-main">
+  <section class="home-task-box" aria-labelledby="task-list-heading">
+    <h2 id="task-list-heading">Tasks</h2>
+    <form id="taskForm" class="task-form home-task-form">
     <label>Task
       <input type="text" id="myInput" placeholder="Anything Extra to remember..." required>
     </label>
@@ -48,14 +53,12 @@
       <textarea id="taskNotes" rows="2" placeholder="Add extra info..."></textarea>
     </label>
     <button type="submit" class="addBtn">Add</button>
-  </form>
-</div>
+    </form>
 
-<ul id="myUL">
-</ul>
-
-<p id="emptyState" class="empty-state" hidden>No extra tasks yet. Add one above! <br> Have you actually finished or too lazy to write them down?</p>
-
+    <p id="emptyState" class="empty-state" hidden>No extra tasks yet. Add one above! <br> Have you actually finished or too lazy to write them down?</p>
+    <ul id="myUL" class="all-tasks-list task-page-list"></ul>
+  </section>
+</main>
 
 </body>
 </html>

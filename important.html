@@ -13,23 +13,48 @@
 <nav>
   <ul>
     <li><a href="index.html">Home</a></li>
-    <li><a href="important.html" aria-current="page">Important List</a></li>
-    <li><a href="school.html">School Homework</a></li>
-    <li><a href="random.html">Random (low priority)</a></li>
-    <li><a href="extra.html">Extra</a></li>
+    <li class="dropdown">
+      <details>
+        <summary>Tasks</summary>
+        <ul class="dropdown-menu">
+          <li><a href="tasks.html">To Do List</a></li>
+          <li><a href="important.html" aria-current="page">Important List</a></li>
+          <li><a href="school.html">School Homework</a></li>
+          <li><a href="random.html">Random (low priority)</a></li>
+          <li><a href="extra.html">Extra</a></li>
+        </ul>
+      </details>
+    </li>
   </ul>
 </nav>
 
 <div id="myDIV" class="header">
-  <h2 style="margin:5px">My To Do List</h2>
-  <input type="text" id="myInput" placeholder="Title...">
-  <span onclick="newElement()" class="addBtn">Add</span>
+  <h1 style="margin:5px; color: rgb(122, 0, 0)">Important Tasks</h1>
+  <form id="taskForm" class="task-form">
+    <label>Task
+      <input type="text" id="myInput" placeholder="Important Task..." required>
+    </label>
+    <label>Work time (minutes)
+      <input type="number" id="taskDuration" min="1" step="1" placeholder="e.g. 30">
+    </label>
+    <label>Importance (1-3)
+      <select id="taskImportance">
+        <option value="1">1 - Low</option>
+        <option value="2" selected>2 - Medium</option>
+        <option value="3">3 - High</option>
+      </select>
+    </label>
+    <label>Notes
+      <textarea id="taskNotes" rows="2" placeholder="Add task notes..."></textarea>
+    </label>
+    <button type="submit" class="addBtn">Add</button>
+  </form>
 </div>
 
 <ul id="myUL">
 </ul>
 
-<p id="emptyState" class="empty-state" hidden>No tasks yet. Add one above!</p>
+<p id="emptyState" class="empty-state" hidden>No important tasks yet.<br> Add one very IMPORTANT task above!</p>
 
 
 

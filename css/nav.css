@@ -3,7 +3,7 @@ nav {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
-nav ul {
+nav > ul {
   list-style: none;
   display: flex;
   justify-content: center;
@@ -45,4 +45,50 @@ nav a:hover {
 nav a[aria-current="page"] {
   background: #fde7ec;
   color: #880e4f;
+}
+
+nav .dropdown {
+  position: relative;
+}
+
+nav .dropdown summary {
+  display: block;
+  padding: 16px 24px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+  transition: background 0.2s ease;
+}
+
+nav .dropdown summary::-webkit-details-marker {
+  display: none;
+}
+
+nav .dropdown summary::after {
+  content: " \25BE";
+}
+
+nav .dropdown summary:hover,
+nav .dropdown details[open] summary {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+nav .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+  display: block;
+  min-width: 220px;
+  background: #ad1457;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+nav .dropdown-menu a {
+  white-space: nowrap;
+}
+
+nav .dropdown-menu a:hover {
+  background: rgba(255, 255, 255, 0.14);
 }

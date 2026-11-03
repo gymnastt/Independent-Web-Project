@@ -43,6 +43,23 @@ ul li:hover {
   font-weight: bold;
 }
 
+#myUL > li {
+  padding-left: 52px;
+}
+
+#myUL .complete-task {
+  position: absolute;
+  top: 17px;
+  left: 16px;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  padding: 0;
+  float: none;
+  accent-color: #ad1457;
+  cursor: pointer;
+}
+
 /* Style the header */
 .header {
   background-color: #fc809f;
@@ -69,6 +86,42 @@ input {
   font-size: 16px;
 }
 
+.task-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 12px;
+  margin-top: 20px;
+  text-align: left;
+}
+
+.task-form label {
+  flex: 1 1 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.task-form input,
+.task-form select,
+.task-form textarea {
+  float: none;
+  width: 100%;
+  height: 40px;
+  margin-top: 6px;
+  padding: 10px;
+  border: none;
+  font: inherit;
+  font-weight: normal;
+}
+
+.task-form textarea {
+  resize: none;
+}
+
 /* Style the "Add" button */
 .addBtn {
   padding: 10px;
@@ -83,8 +136,168 @@ input {
   border-radius: 0;
 }
 
+.task-form .addBtn {
+  align-self: flex-end;
+  float: none;
+  width: auto;
+  min-width: 100px;
+  border: none;
+}
+
 .addBtn:hover {
   background-color: #d0637c;
+}
+
+.task-title {
+  display: block;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  padding-right: 36px;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+}
+
+.task-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 10px;
+  margin-top: 10px;
+  padding-right: 36px;
+  text-align: left;
+}
+
+.task-controls[hidden],
+.task-notes-editor[hidden] {
+  display: none;
+}
+
+.task-edit-footer {
+  flex: 1 1 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.task-importance {
+  flex: 1 1 100%;
+}
+
+.close-task-details {
+  border: 1px solid #ad1457;
+  border-radius: 3px;
+  padding: 4px 10px;
+  background: #ad1457;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.close-task-details:hover,
+.close-task-details:focus-visible {
+  background: #880e4f;
+}
+
+.task-controls label {
+  flex: 1 1 180px;
+  color: #5f1835;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.task-controls .task-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.task-value {
+  width: fit-content;
+  border: 0;
+  padding: 2px 0;
+  background: transparent;
+  color: #5f1835;
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.task-value:hover,
+.task-value:focus-visible {
+  color: #880e4f;
+  text-decoration: underline;
+}
+
+.task-controls input {
+  float: none;
+  width: 100%;
+  margin-top: 4px;
+  padding: 7px;
+  font-size: 14px;
+}
+
+.task-importance {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #5f1835;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.task-notes {
+  flex: 1 1 100%;
+  color: #5f1835;
+}
+
+.task-notes h3 {
+  margin: 4px 0;
+  font-size: 13px;
+}
+
+.task-notes-editor {
+  display: block;
+  width: 100%;
+  min-height: 70px;
+  margin-top: 4px;
+  padding: 8px;
+  border: 1px solid #ad1457;
+  font: inherit;
+  resize: vertical;
+}
+
+.importance-button {
+  min-width: 32px;
+  border: 1px solid #ad1457;
+  padding: 5px 9px;
+  background: white;
+  color: #880e4f;
+  cursor: pointer;
+}
+
+.importance-button.is-selected {
+  background: #ad1457;
+  color: white;
+}
+
+.remove-task {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  border: 0;
+  padding: 4px 10px;
+  background: transparent;
+  color: #880e4f;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.remove-task:hover {
+  background: #ad1457;
+  color: white;
 }
 
 .empty-state {
@@ -99,3 +312,6 @@ input {
   border-top: 3px solid #fc809f;
 }
 
+.empty-state[hidden] {
+  display: none;
+}
